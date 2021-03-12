@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Logout = () => {
+  let history = useHistory();
   const logout = () => {
     localStorage.removeItem("authToken");
-    props.history.push("/");
+    history.push("/");
   };
-  
+
   return (
     <Link onClick={logout}>Logout</Link>
   )
