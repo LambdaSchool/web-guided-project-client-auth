@@ -21,7 +21,10 @@ class Login extends React.Component {
   login = e => {
     e.preventDefault();
     axios.post("http://localhost:5000/api/login", this.state.credentials)
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res);
+        localStorage.setItem("authToken", res.data.payload);
+      })
       .catch(err => console.log(err));
   };
 
