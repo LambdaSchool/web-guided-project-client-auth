@@ -15,7 +15,12 @@ class GasPrices extends React.Component {
   getData = () => {
     const token = localStorage.getItem("authToken");
     axios.get("http://localhost:5000/api/data", { headers: { Authorization: token } })
-      .then(res => console.log(res))
+      .then(res => {
+        this.setState({
+          ...this.state, // not necessary with setState's shallow merge, but we like to practice it this way whenever using objects as state variables, because that's how we do it in Redux!
+          gasPrices: res.data.data
+        })
+      })
       .catch(err => console.log(err));
   };
 
