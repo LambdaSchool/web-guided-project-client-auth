@@ -1,16 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import Login from './components/Login';
 import GasPrices from './components/GasPrices';
 
-function App() {
+function App(props) {
   let history = useHistory();
   console.log("history", history);
 
   const logout = () => {
     localStorage.removeItem("authToken");
-    history.push("/login");
+    props.history.push("/");
   };
 
 
