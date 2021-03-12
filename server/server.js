@@ -12,7 +12,7 @@ app.use(cors());
 app.use(morgan('dev'));
 
 function authenticator(req, res, next) {
-  const { authorization } = req.headers;
+  const { authorization } = req.headers; // in the request headers object {Authorization: "something"}, grab that "something" value and assign it to const authorization
   if (authorization === token) {
     next();
   } else {
