@@ -1,10 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, useHistory } from 'react-router-dom';
 
 import Login from './components/Login';
 import GasPrices from './components/GasPrices';
-
-import axios from 'axios';
 
 function App() {
   let history = useHistory();
