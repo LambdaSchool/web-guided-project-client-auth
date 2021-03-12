@@ -3,15 +3,9 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import Login from './components/Login';
 import GasPrices from './components/GasPrices';
+import Logout from './components/Logout';
 
 function App(props) {
-
-  const logout = () => {
-    localStorage.removeItem("authToken");
-    props.history.push("/");
-  };
-
-
   return (
     <Router>
       <div className="App">
@@ -20,7 +14,7 @@ function App(props) {
             <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link onClick={logout}>Logout</Link>
+            <Logout />
           </li>
           <li>
             <Link to="/protected">Protected Page</Link>
