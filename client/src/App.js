@@ -7,8 +7,11 @@ import GasPrices from './components/GasPrices';
 import axios from 'axios';
 
 function App() {
+  let history = useHistory();
+
   const logout = () => {
     localStorage.removeItem("authToken");
+    history.push("/");
   };
 
 
