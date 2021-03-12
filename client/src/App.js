@@ -9,7 +9,7 @@ function App() {
 
   const logout = () => {
     localStorage.removeItem("authToken");
-    history.push("/");
+    history.push("/login");
   };
 
 
