@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import GasPrices from './components/GasPrices';
 import Logout from './components/Logout';
+import PrivateRoute from './components/PrivateRoute';
 
 function App(props) {
   return (
@@ -21,7 +22,7 @@ function App(props) {
           </li>
         </ul>
         <Switch>
-          <Route exact path="/protected" component={GasPrices} />
+          <PrivateRoute exact path="/protected" component={GasPrices} />
           <Route path="/login" component={Login} />
           <Route component={Login} /> {/* This is like the default case in a Javascript switch statement */}
         </Switch>
