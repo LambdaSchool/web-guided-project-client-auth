@@ -11,7 +11,10 @@ class GasPrices extends React.Component {
     this.getData();
   }
 
-  getData = () => {};
+  getData = () => {
+    const token = localStorage.getItem("authToken");
+
+  };
 
   formatData = () => {
     const formattedData = [];
