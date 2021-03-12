@@ -29,7 +29,7 @@ function App() {
         <Switch>
           <Route exact path="/protected" component={GasPrices} />
           <Route path="/login" component={Login} />
-          <Route component={Login} />
+          <Route component={Login} /> {/* This is like the default case in a Javascript switch statement */}
         </Switch>
       </div>
     </Router>
