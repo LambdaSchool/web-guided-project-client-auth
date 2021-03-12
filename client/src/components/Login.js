@@ -24,6 +24,8 @@ class Login extends React.Component {
       .then(res => {
         console.log(res);
         localStorage.setItem("authToken", res.data.payload);
+        // redirect to logged in homepage
+        this.props.history.push("/protected");
       })
       .catch(err => console.log(err));
   };
