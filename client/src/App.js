@@ -8,7 +8,7 @@ import axios from 'axios';
 
 function App() {
   const logout = () => {
-    
+    localStorage.removeItem("authToken");
   };
 
 
