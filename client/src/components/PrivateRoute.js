@@ -8,9 +8,9 @@ import { Route, Redirect } from "react-router-dom";
 //    If there's a token: render the component passed in as the "component" prop
 //    Otherwise, redirect the user to /login
 
-const PrivateRoute = () => {
+const PrivateRoute = (props) => {
   return (
-
+    <Route {...props} />
   )
 }
 
