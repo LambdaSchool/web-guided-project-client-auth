@@ -6,6 +6,7 @@ import GasPrices from './components/GasPrices';
 
 function App() {
   let history = useHistory();
+  console.log("history", history);
 
   const logout = () => {
     localStorage.removeItem("authToken");
