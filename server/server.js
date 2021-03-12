@@ -12,7 +12,7 @@ app.use(cors());
 app.use(morgan('dev'));
 
 function authenticator(req, res, next) {
-  const { authorization } = req.headers; // in the request headers object {Authorization: "something"}, grab that "something" value and assign it to const authorization
+  const { authorization } = req.headers; // in the request headers object {Authorization: "something"}, grab that "something" value (a JWT) and assign it to const authorization
   if (authorization === token) {
     next();
   } else {
@@ -23,7 +23,7 @@ function authenticator(req, res, next) {
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
   if (username === "lambda" && password === "school") {
-    req.loggedIn = true;
+    req.loggedIn = true; // the dummy version of creating a new user session in the db and generating a JSON web token
     res.status(200).json({
       payload: token
     });
